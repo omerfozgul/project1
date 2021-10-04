@@ -42,29 +42,30 @@ public class App {
           System.out.println(inputList);
 
 
-          /*String input2 = req.queryParams("input2").replaceAll("\\s","");
+          String input2 = req.queryParams("input2");
 
           java.util.Scanner sc2 = new java.util.Scanner(input2);
           sc1.useDelimiter("[;\r\n]+");
-          java.util.ArrayList<Integer> input2List = new java.util.ArrayList<>();
-          int sum = 0, i = 0;
+          int i = 0;
           int[] numbers = new  int[3];
           while (sc2.hasNext())
           {
             int value = Integer.parseInt(sc2.next().replaceAll("\\s",""));
             numbers[i] = value;
-            sum += value;
+            i++;
           }
           sc2.close();
 
+          System.out.println("1: " + numbers[0] + ", 2: " + numbers[1] + ", 3: " + numbers[2]);
+
           //int input2AsInt = Integer.parseInt(input2);
 
-          boolean result = App.searchTheSum(inputList, numbers[0], numbers[1], numbers[2]);*/
+          boolean result = App.searchTheSum(inputList, numbers[0], numbers[1], numbers[2]);
 
-          String input2 = req.queryParams("input2").replaceAll("\\s","");
+          /*String input2 = req.queryParams("input2").replaceAll("\\s","");
           int input2AsInt = Integer.parseInt(input2);
 
-          boolean result = App.search(inputList, input2AsInt);
+          boolean result = App.search(inputList, input2AsInt);*/
 
           Map<String, Boolean> map = new HashMap<String, Boolean>();
           map.put("result", result);
@@ -92,7 +93,7 @@ public class App {
         return false;
     }
 
-    public static boolean searchTheSum(int[] array, int x, int y, int z){
+    public static boolean searchTheSum(ArrayList<Integer> array, int x, int y, int z){
         System.out.println("inside search");
         if (array == null) return false;
   

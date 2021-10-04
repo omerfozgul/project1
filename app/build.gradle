@@ -17,7 +17,7 @@ plugins {
     id 'application'
 
     // https://imperceptiblethoughts.com/shadow/getting-started/#default-java-groovy-tasks
-    id 'com.github.johnrengelman.shadow' version '6.1.0'
+    //id 'com.github.johnrengelman.shadow' version '6.1.0'
 }
 
 mainClassName = 'com.package.to.Class'
@@ -62,3 +62,7 @@ tasks.named('test') {
     // Use junit platform for unit tests.
     useJUnitPlatform()
 }
+
+/*task stage(dependsOn: ['shadowJar'])
+shadowJar.mustRunAfter clean*/
+
